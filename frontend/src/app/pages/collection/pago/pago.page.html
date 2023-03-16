@@ -1,0 +1,39 @@
+<app-header titulo="Pagar compra"></app-header>
+
+<ion-content>
+
+    <ion-text color="secundary">
+        <h1>Finalizar Compra</h1>
+    </ion-text>
+
+    <ion-list no-lines>
+        <ion-item>
+            <ion-label position="stacked">Nombre y Apellidos</ion-label>
+            <ion-input [clearInput]="true" placeholder="Introduzca su nombre y apellidos"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="stacked">Dirección</ion-label>
+            <ion-input [clearInput]="true" placeholder="Introduzca su dirección"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="stacked">Teléfono</ion-label>
+            <ion-input [clearInput]="true" placeholder="Introduzca su número de teléfono"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="stacked">Introduzca el número de tarjeta</ion-label>
+            <ion-input type="text" placeholder="Número de Tarjeta"></ion-input>
+            <ion-label position="stacked">CVV</ion-label>
+            <ion-input type="text" placeholder="CVV"></ion-input>
+            <ion-label position="stacked">Fecha de caducidad</ion-label>
+            <ion-datetime-button datetime="datetime"></ion-datetime-button>
+            <ion-modal [keepContentsMounted]="true">
+                <ng-template>
+                    <ion-datetime id="datetime"></ion-datetime>
+                </ng-template>
+            </ion-modal>
+        </ion-item>
+</ion-list>
+ <ion-button (click)="goToFin()"  (click)="removeAllCarrito()" (click)="showLoading()" expand="block" >Finalizar</ion-button>
+</ion-content>

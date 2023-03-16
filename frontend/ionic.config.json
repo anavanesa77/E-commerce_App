@@ -1,0 +1,8 @@
+{
+  "name": "appWoman",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

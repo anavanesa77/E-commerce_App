@@ -1,0 +1,20 @@
+<ion-menu side="start" menuId="mainMenu" contentId="main">
+  <ion-header no-border>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-menu-toggle>
+      <ion-item [routerLink]="['clothing']">Ropa</ion-item>
+      <ion-item [routerLink]="['shoes']">Calzado</ion-item>
+      <ion-item [routerLink]="['accessories']">Complementos</ion-item>
+      <ion-item [routerLink]="['login']">Log-In</ion-item>
+      <ion-item [routerLink]="['administrator']" color="primary">
+        <ion-icon slot="start" name="person"></ion-icon>Administrador
+      </ion-item>
+    </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>

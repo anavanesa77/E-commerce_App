@@ -1,0 +1,18 @@
+<app-header titulo="Todos los productos"></app-header>
+
+<ion-content>
+  <ion-progress-bar [value]="progress"></ion-progress-bar>
+    <ion-list>
+      <ion-item-sliding *ngFor="let a of articles">
+        <ion-item  [routerLink]="['/product', a.id]">
+          <ion-avatar slot="start" *ngIf="a.collection=='Calzado'">
+            <img *ngIf="a.filename" src="http://localhost:8080/images/{{a.filename}}" alt="image" />
+          </ion-avatar>
+          <ion-label *ngIf="a.collection=='Calzado'">
+            <p><b>{{a.name}}</b></p>
+            <p><b>{{a.price}}</b></p>
+          </ion-label>
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-content>

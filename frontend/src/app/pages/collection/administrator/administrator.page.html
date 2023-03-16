@@ -1,0 +1,24 @@
+<app-header titulo="Administrador"></app-header>
+<ion-content>
+  <ion-card>
+    <ion-img src="assets/major/fine-wooden-hangers-display-dark-clothes.jpg"></ion-img>
+    <ion-card-header>
+      <ion-card-title>Productos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Puedes ver, agregar, actualizar y organizar todos tus productos y variantes desde la página Productos
+    </ion-card-content>
+    <ion-button (click)="goToList()" expand="block">Ir</ion-button>
+  </ion-card>
+  <ion-card>
+    <ion-img src="assets/major/a-retail-customer-with-a-face-mask.jpg"></ion-img>
+    <ion-card-header>
+      <ion-card-title>Clientes</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Cada vez que un nuevo cliente haga un pedido en la tienda, su nombre y otra información se agregarán a la lista de
+      clientes. Puedes revisar la lista de todos los clientes y gestionar su información desde la página Clientes
+    </ion-card-content>
+    <ion-button expand="block" (click)="gotoUser()">Ir</ion-button>
+  </ion-card>
+</ion-content>

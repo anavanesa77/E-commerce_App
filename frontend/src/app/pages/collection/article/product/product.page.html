@@ -1,0 +1,18 @@
+<app-header titulo="Artículo"></app-header>
+
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <img *ngIf="articles.name" src="http://localhost:8080/images/{{articles.filename}}" alt="image" />
+      <ion-card-title> {{articles.name}} </ion-card-title>
+      <ion-card-subtitle>{{articles.price}}€</ion-card-subtitle>
+      <ion-card-subtitle>{{articles.colour}}</ion-card-subtitle>
+      <ion-card-subtitle>{{articles.size}}</ion-card-subtitle>
+      <button ion-button (click)="getCarrito()"> <ion-icon  name="bag-handle-outline"></ion-icon>
+      </button>
+    </ion-card-header>
+    <ion-card-content>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

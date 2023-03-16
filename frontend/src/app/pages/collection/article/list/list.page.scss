@@ -1,0 +1,22 @@
+ion-avatar {
+    --border-radius: 4px;
+    border: gray solid 1px;
+    width: 70px;  
+    height: 70px;
+}
+
+ion-refresher ion-refresher-content {
+    --color:rgb(11, 11, 11) !important;
+    background-color: #FFF;
+    
+    .refresher-pulling-text, .refresher-refreshing-text, .refresher-refreshing-icon, .refresher-pulling-icon {
+      color: rgb(246, 243, 243) !important;
+    }
+  }
+
+  p {
+    color:rgb(11, 11, 11);
+    font-size:17px;
+    text-align:center;
+}
+

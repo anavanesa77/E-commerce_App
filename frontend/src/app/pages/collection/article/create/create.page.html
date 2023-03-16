@@ -1,0 +1,98 @@
+<app-header titulo="Agregar articulo"></app-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="6">
+        <ion-img class="photo-frame" *ngIf="capturedPhoto" [src]="capturedPhoto" (click)="takePhoto()"></ion-img>
+        <ion-img class="photo-frame" *ngIf="!capturedPhoto" src="../../assets/No-Image-Placeholder.svg"
+          (click)="takePhoto()"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="6">
+        <ion-button color="medium" (click)="takePhoto()">
+          <ion-icon slot="start" name="camera-outline"></ion-icon>
+          Hacer foto
+        </ion-button>
+        <ion-button color="medium" (click)="pickImage()">
+          <ion-icon slot="start" name="image-outline"></ion-icon>
+          Buscar imagen
+        </ion-button>
+        <ion-button color="danger" (click)="discardImage()">
+          <ion-icon slot="start" name="aperture"></ion-icon>
+          Eliminar imagen
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <form [formGroup]="articleForm" (ngSubmit)="submitForm()" novalidate>
+    <ion-item lines="full">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input formControlName="name" type="text" required></ion-input>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">El nombre no puede estar
+      vacio.</span>
+    <ion-item lines="full">
+      <ion-label position="floating">Precio</ion-label>
+      <ion-input formControlName="price" type="text" required></ion-input>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.price.errors?.required">El precio no puede estar
+      vacio.</span>
+    <ion-item lines="full">
+      <ion-label position="floating">Cantidad</ion-label>
+      <ion-input formControlName="amount" type="text" required></ion-input>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.amount.errors?.required">La cantidad no puede
+      estar
+      vacio.</span>
+    <ion-item lines="full">
+      <ion-label position="floating">Colección</ion-label>
+      <ion-select formControlName="collection">
+        <ion-select-option value="Ropa">Ropa</ion-select-option>
+        <ion-select-option value="Calzado">Calzado</ion-select-option>
+        <ion-select-option value="Complementos">Complementos</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.collection.errors?.required">La colección no
+      puede estar vacia.</span>
+    <ion-item lines="full">
+      <ion-label position="floating">Talla</ion-label>
+      <ion-select formControlName="size">
+        <ion-select-option value="36">36</ion-select-option>
+        <ion-select-option value="37">37</ion-select-option>
+        <ion-select-option value="38">38</ion-select-option>
+        <ion-select-option value="39">39</ion-select-option>
+        <ion-select-option value="40">40</ion-select-option>
+        <ion-select-option value="0">0</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.size.errors?.required">La talla no
+      puede estar vacia.</span>
+    <ion-item lines="full">
+      <ion-label position="floating">Color</ion-label>
+      <ion-select formControlName="colour">
+        <ion-select-option value="Rojo">Rojo</ion-select-option>
+        <ion-select-option value="Azul">Azul</ion-select-option>
+        <ion-select-option value="Verde">Verde</ion-select-option>
+        <ion-select-option value="Amarillo">Amarillo</ion-select-option>
+        <ion-select-option value="Naranja">Naranja</ion-select-option>
+        <ion-select-option value="Rosa">Rosa</ion-select-option>
+        <ion-select-option value="Negro">Negro</ion-select-option>
+        <ion-select-option value="Beige">Beige</ion-select-option>
+        <ion-select-option value="Marron">Marron</ion-select-option>
+        <ion-select-option value="Blanco">Blanco</ion-select-option>
+        <ion-select-option value="Gris">Gris</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.colour.errors?.required">El color no
+      puede estar vacia.</span>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" expand="block">Agregar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

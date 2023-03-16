@@ -1,0 +1,80 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="mainMenu"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="cart-outline" size="large" (click)=" goToCarrito()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-slides pager="true" class="slide-full">
+    <ion-slide *ngFor="let slide of slides">
+      <div class="slide-img-padding">
+        <img [src]="slide.img">
+        <h3 [innerHTML]="slide.titulo"></h3>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Colecciones</ion-card-title>
+    </ion-card-header>
+
+    <ion-accordion-group>
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <ion-label>Ropa</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content"> <ion-img src="assets/major/fine-wooden-hangers-display-dark-clothes.jpg"></ion-img>
+          La ropa de B.Woman cuenta con prendas de diferentes estilos, color, formas, siempre adaptándonos a ti y sus
+          necesidades.
+          <ion-button shape="round" expand="block" [routerLink]="['/clothing']">Compra ahora</ion-button>
+        </div>  
+      </ion-accordion>
+
+      <ion-accordion value="second">
+        <ion-item slot="header" color="light">
+          <ion-label>Calzado</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content"> <ion-img src="assets/major/boots-on-blue.jpg"></ion-img>
+          Encuentra la mejor selección de zapatos mujer. Sandalias, botas y botines, zapatos de salón, zapatos fiesta,
+          zapatillas, peep toes.
+          <ion-button shape="round" expand="block" [routerLink]="['/shoes']">Compra ahora</ion-button>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="third">
+        <ion-item slot="header" color="light">
+          <ion-label>Complementos</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content"> <ion-img src="assets/major/modern-jewelry-and-accessories-on-display.jpg"></ion-img>
+          Encuentra todos los accesorios de mujer en la tienda online El Corte Inglés. Bolsos, zapatos, relojes, gafas…
+          <ion-button shape="round" expand="block" [routerLink]="['/accessories']">Compra ahora</ion-button>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+
+  </ion-card>
+
+
+  <ion-card>
+    <ion-img src="assets/major/contact-us-phone.jpg"></ion-img>
+    <ion-card-header>
+      <ion-card-title>Contacto</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      ¿Tienes una duda? ¡Te ayudamos!
+    </ion-card-content>
+    <div class="container">
+      <ion-button (click)="presentActionSheet()">Ir</ion-button>
+    </div>
+  </ion-card>
+
+  
+
+</ion-content>

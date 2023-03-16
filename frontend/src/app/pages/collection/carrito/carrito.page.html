@@ -1,0 +1,35 @@
+<app-header titulo="Carrito de Compra"></app-header>
+
+<ion-content>
+  <ion-progress-bar [value]="progress"></ion-progress-bar>
+  <ion-list lines="none">
+    <ion-item-sliding *ngFor="let c of carrito">
+      <ion-item>
+        <ion-label>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="auto">
+                <div style="width: 200px">{{c.name}}</div>
+              </ion-col>
+              <ion-col>{{c.price}}</ion-col>
+              <ion-button (click)="deleteCarrito(c.id!)" size="small" fill="solid" color="danger"> Eliminar
+              </ion-button>
+            </ion-row>
+          </ion-grid>
+        </ion-label>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-button (click)="goToPay()" >
+    <ion-icon slot="start" name="card-outline"></ion-icon>
+    Pagar Compra
+  </ion-button>
+
+
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="goToMenu()" expand="full"> Seguir comprando</ion-button>
+  </ion-toolbar>
+</ion-footer>

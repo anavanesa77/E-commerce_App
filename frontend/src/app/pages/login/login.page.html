@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>LogIn</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="!loading">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>LogIn</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="formLogin">
+        <ion-item>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input formControlName="username"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>    
+      </form>
+      <br>
+      <ion-button (click)="logIn()">
+        Aceptar
+      </ion-button>
+    </ion-card-content>
+
+    <div *ngIf="loading" style="display: flex; justify-content: center; align-items: center;">
+      <ion-spinner color="tertiary"></ion-spinner>
+      <ion-spinner color="warning"></ion-spinner>
+      <ion-spinner color="danger"></ion-spinner>
+    </div>
+
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/signin']">Regístrate aquí!</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
