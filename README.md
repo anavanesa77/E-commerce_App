@@ -51,7 +51,7 @@ Finally to start enjoying this project.
 
 ```
 cd BWomanCanarias/backend
-npm node.js
+node index.js
 
 cd BWomanCanarias/frontend
 ionic serve --lab
